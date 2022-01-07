@@ -213,12 +213,14 @@ nextflow.enable.dsl=2
 */
 
 /* Load files  into channel*/
-reference_genome = Channel.fromPath("${params.files_path}/*.fa")
-gz_file = Channel.fromPath("${params.files_path}/*.gz")
+reference_genome = Channel.fromPath("${params.files_path}/reference.fasta.gz")
+mate_1 = Channel.fromPath("${params.files_path}/*_R1.paired.fastq.gz")
+mate_2 = Channel.fromPath("${params.files_path}/*_R2.paired.fastq.gz")
+
 
 /* Import modules
 */
- include {making_index; making_alignment} from './nf_modules/modules.nf'
+ include {making_index; making_alignment; sam_to_bam; sorting_bam; peak_calling} from './nf_modules/modules.nf'
 
  /*
   * main pipeline logic
@@ -226,5 +228,8 @@ gz_file = Channel.fromPath("${params.files_path}/*.gz")
 
  workflow  {
 	 p1 = making_index(reference_genome)
-	 p2 = making_alignment(p1, gz_file)
+	 p2 = making_alignment(p1, mate_1, mate_2)
+	 p3 = sam_to_bam(p2)
+	 p4 = sorting_bam(p3)
+	 p5 = peak_calling(p4)
  }
