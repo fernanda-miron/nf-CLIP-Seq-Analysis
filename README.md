@@ -63,7 +63,7 @@ nextflow run CLIP_seq.nf --fastq_file <path to input 1> [--output_dir path to re
 --fastq_file	<- fastq.gz fasta file;
 
 --output_dir  <- directory where results, intermediate and log files will bestored;
-	      default: same dir where --query_fasta resides
+	      default: same dir where --fastq_file resides
 
 ```
 
