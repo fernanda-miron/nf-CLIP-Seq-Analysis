@@ -60,11 +60,16 @@ To run nf-CLIP-Seq go to the pipeline directory and execute:
 ```
 nextflow run CLIP_seq.nf --fastq_file <path to input 1> [--output_dir path to results ]
 
+--fastq_file	<- fastq.gz fasta file;
+
+--output_dir  <- directory where results, intermediate and log files will bestored;
+	      default: same dir where --query_fasta resides
+
 ```
 
 For information about options and parameters, run:
 ```
-nextflow run compare-miRNA-pairs.nf --help
+nextflow run CLIP_seq.nf --help
 ```
 ---
 
