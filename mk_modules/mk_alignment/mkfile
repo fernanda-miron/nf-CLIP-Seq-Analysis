@@ -1,0 +1,11 @@
+MKSHELL="/bin/bash"
+
+#target: OPCIONES: prereq
+# La opcion Q = QUIET no imprime todo
+
+#target:OPCIONES:prereq
+#./test/data/final.vcf: ./test/data/final.txt ./test/data/positions.txt
+
+%.sam: %.fastq.gz
+	echo "[DEBUG] Running analysis"
+	bowtie2 -x ./reference-index/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bowtie_index -U $prereq -S $target

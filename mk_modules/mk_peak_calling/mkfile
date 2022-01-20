@@ -1,0 +1,12 @@
+MKSHELL="/bin/bash"
+
+#target: OPCIONES: prereq
+# La opcion Q = QUIET no imprime todo
+
+#target:OPCIONES:prereq
+#./test/data/final.vcf: ./test/data/final.txt ./test/data/positions.txt
+
+%.bed: %.bam
+	echo "[DEBUG] Running analysis"
+	source activate clipper3
+	clipper -b $prereq -o $target -s GRCh38

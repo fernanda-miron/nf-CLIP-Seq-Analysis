@@ -1,10 +1,10 @@
-files_path="test/data"
-output_directory="test/results"
+fastq_file="test/data/*.fastq.gz"
+output_directory="$(dirname $fastq_file)/results"
 
 echo -e "======\n Testing NF execution \n======" \
 && rm -rf $output_directory \
-&& nextflow run wrangling.nf \
-	--files_path $files_path \
+&& nextflow run CLIP_seq.nf \
+	--fastq_file $fastq_file \
 	--output_dir $output_directory \
 	-resume \
 	-with-report $output_directory/`date +%Y%m%d_%H%M%S`_report.html \
