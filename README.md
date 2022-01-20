@@ -68,9 +68,10 @@ nextflow run compare-miRNA-pairs.nf --help
 ```
 ---
 
-#### Autors
-Jose Eduardo Garcia-Lopez (jeduardogl655@gmail.com)
-Diana Rogel (diana.rogel@mpi-bn.mpg.de)
-Israel Aguilar-Ordonez (iaguilaror@gmail.com)
-Fernanda Miron-Toruno (fernandamiront@gmail.com)
+#### Authors
+Lead Developer - Fernanda Miron-Toruno (fernandamiront@gmail.com)
+
+Code Supervisor - Israel Aguilar-Ordonez (iaguilaror@gmail.com)
+
+Concept Designer - Diana Rogel (diana.rogel@mpi-bn.mpg.de)
 

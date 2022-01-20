@@ -1,0 +1,18 @@
+## ignore nf.logs
+.nextflow.log*
+.nextflow/
+
+## ignore heavy test data
+test/data/reference-index/*
+
+## ignore workdirw
+work*
+
+## Ignore test subdirectories from mkmodules
+mkmodules/*/test/results/*
+
+## ignore intermediate and logs from tests
+test/data/*/intermediate/
+test/data/*/logs/
+test/results*
+
